@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Manipulando Vetores - 20º Exemplo</title>
+        <script src="../topico_4/js/jquery-3.5.1.min.js"></script>
+        <style>
+            .centro{
+                margin-top: 5%;
+                margin-left:  30%;
+                margin-right: 20%;
+            }    
+            .formcontrol{
+               margin: 5px;
+               
+            }
+
+            .alinhamento{
+                width: 30%;
+                float: left;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="centro">          
+            <label for="inputResultado">Resultado:</label>
+            <input type="text" id="inputResultado" value=""> 
+            
+            <label for="inputMedia">Média:</label>
+            <input type="text" id="inputMedia" value="" disabled>
+
+            <label for="inputMedia">Soma pares:</label>
+            <input type="text" id="inputSP" value="" disabled>
+
+            <label for="inputMedia">Soma impares:</label>
+            <input type="text" id="inputSI" value="" disabled>
+
+        </div>
+
+    </body>
+    <script type="text/javascript">
+
+        //Jquery permite para executar uma function após o click em um botão:    
+        $(document).ready(function() {
+
+            var dados1 = [];
+
+            for(var i=0; i < 3; i++){
+                        
+                dados1[i] = prompt("Digite um valor inteiro:");
+            }
+            
+            var soma = 0;
+            var somaI = 0;
+            var somaP = 0;
+
+            for(var i=0; i < 3; i++){
+                        
+                soma = soma + parseInt(dados1[i]);
+
+                if(parseInt(dados1[i]) % 2 == 0){
+                    somaP = somaP + parseInt(dados1[i]);
+                }else{
+                    somaI = somaI + parseInt(dados1[i]);
+                }
+            }
+            
+
+            var input = document.getElementById("inputResultado");
+            input.value = soma;
+
+            var inputSP = document.getElementById("inputSP");
+            inputSP.value = somaP;
+
+            var inputSI = document.getElementById("inputSI");
+            inputSI.value = somaI;
+
+            var inputM = document.getElementById("inputMedia");
+            inputM.value = (soma / 3.0).toFixed(2);
+
+
+            //criar mais uma caixa de texto e rótulo (desabilitada)
+            //armazenar o valor médio. apenas duas casas decimais.
+
+
+        });
+
+        
+
+    </script>
+
+</html>  

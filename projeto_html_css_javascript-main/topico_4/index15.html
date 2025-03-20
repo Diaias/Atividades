@@ -1,0 +1,136 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript recuperando dados do documento - 15º Exemplo</title>
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <style>
+            .form{
+                margin-top: 5%;
+                margin-left:  30%;
+                margin-right: 20%;
+            }    
+            .formcontrol{
+               margin: 5px;
+            }
+
+            .alinhamento{
+                width: 40%;
+                float: left;
+            }
+        </style>
+
+    </head>
+    <body>
+        <form id="formCalculaItem" action="#" method="get">
+            <div class="form">
+                <div class="formcontrol">
+                    <div class="alinhamento">
+                        <label for="nome">Nome da Mercadoria:</label>
+                    </div>
+                    <input id="inputNome"  type="text" name="nome" value=""/>
+                </div>
+                <div class="formcontrol">
+                    <div class="alinhamento">
+                        <label for="peso">Valor da Mercadoria:</label>
+                    </div>
+                    <input type="number" name="valor" id="inputValor" size="10" step="0.1"/>
+                </div>
+
+                <div class="formcontrol">
+                    <div class="alinhamento">
+                        <label for="peso">Quantidade da Mercadoria:</label>
+                    </div>
+                    <input type="number" name="quantidade" id="inputQuantidade" size="10"/>
+                </div>
+
+                <div class="formcontrol">
+                    <div class="alinhamento">
+                        <label for="total">Total:</label>
+                    </div>
+                    <input type="number" name="total" id="inputTotal" size="5" value="0" readonly/>
+                </div>
+                
+                <input type="submit" value="Calcular">
+            </div>
+        </form>
+
+    </body>
+    <script type="text/javascript">
+
+        //jquery: para executar uma function após a submissão do formulário pelo botão:
+        $('#formCalculaItem').bind('submit', function () {
+
+            //documentação sobre o método getElementById: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+            var valor = document.getElementById("inputValor").value;
+
+            var quantidade = document.getElementById("inputQuantidade").value;
+
+            var nome = document.getElementById("inputNome").value;
+
+
+            //documentacao sobre o metodo alert: https://www.w3schools.com/jsref/met_win_alert.asp
+            //alert(valor * quantidade);
+
+            if(nome.length > 0 && nome.length < 11){
+
+                if(valor >= 1 && valor <= 10000){
+
+                    if(quantidade > 0 && quantidade < 101 ){
+
+                        document.getElementById("inputTotal").value = valor * quantidade;
+                    }else{
+                        alert("Quantidade inválida !!!");
+                    }
+                }else{
+                    alert("VAlor inválido !!!");
+                }
+            }else{
+                alert("Nome inválido. Quantidade de caracteres: "+ nome.length  +" !!!");
+            }
+
+          
+
+            /*  Exercicio 2.
+                Validar o campos e apresentar uma mensagen indicado o erro.
+                Nome da mercadoria: de 1 a 10 caracteres.
+                Valor da mercadoria de 1 a 10.000.
+                Quantidade de mercadoria: 1 a 100.            
+            */
+
+            
+        });
+
+        
+        $(document).ready(function() {
+
+          //recupera a url  
+          const queryString = window.location.search;
+
+          //recupera os parâmemtros que estão na url
+          const urlParams = new URLSearchParams(queryString);
+            
+        //acessa os parametros e seta nas caixas de texto.
+        document.getElementById("inputNome").value = 
+                                        urlParams.get('nome');
+
+        if(!isNaN(urlParams.get('valor')) && urlParams.get('valor') != null  ){
+          document.getElementById("inputValor").value = 
+                            parseFloat(urlParams.get('valor'));
+        }
+
+        if(!isNaN(urlParams.get('quantidade')) && urlParams.get('quantidade') != null  ){
+          document.getElementById("inputQuantidade").value = 
+                            parseFloat(urlParams.get('quantidade'));        
+        }
+
+        if(!isNaN(urlParams.get('total')) && urlParams.get('total') != null  ){
+                document.getElementById("inputTotal").value = 
+                            parseFloat(urlParams.get('total'));
+        }                  
+                    
+        });
+        
+
+    </script>
+
+</html>  

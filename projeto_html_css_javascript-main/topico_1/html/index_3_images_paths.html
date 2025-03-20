@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tópico 1 - HTML - Exemplo 3</title>
+    </head>
+    <body>
+        
+        <h1 style="text-align: center;">Renderizando imagens - caminhos absolutos e relativos</h1>
+
+
+        <div id="section_one">
+            <label>Renderização de imagem externa na página - https://cdn.gtranslate.net/flags/svg/it.svg </label>
+            <br>
+            <img src="https://cdn.gtranslate.net/flags/svg/it.svg" width="15%" height="15%">
+        </div>
+
+        <div>
+            <label>Renderização de imagem interna (armazenada no computador pelo caminho absoluto) - /home/telmo/Documents/IFSUL/2025_01/CPW/projeto_html_css_javascript/topico_1/html/imagens/bike.jpg  </label>
+            <br>
+            <img src="/home/telmo/Documents/IFSUL/2025_01/CPW/projeto_html_css_javascript/topico_1/html/imagens/bike.jpg">
+        </div>
+
+
+        <div>
+            <label>Renderização de imagem interna (armazenada no computador pelo caminho relativo) - ./imagens/bike.jpg  </label>
+            <br>
+            <img src="./imagens/bike.jpg">
+        </div>
+
+        <div>
+            <label>Link contendo uma imagem - ./imagens/fnm.jpeg  </label>
+            <br>
+            <a href="https://pt.wikipedia.org/wiki/F%C3%A1brica_Nacional_de_Motores" target="_blank">                
+                <img src="./imagens/fnm.jpeg" alt="Caminhão nacional">
+            </a>
+        </div>
+
+
+        <div>
+
+            <p>Links para um elemento na mesma página</p>
+        
+            <p><a href="#section_one">Link para um elemento da própria página.</a></p>                        
+
+
+        </div>
+
+
+
+    </body>
+</html>

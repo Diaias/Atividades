@@ -1,0 +1,17 @@
+.fonte
+{
+    font-size: 30px;
+    text-indent: 3ch;
+}
+
+.fundo
+{
+    background-color: antiquewhite;
+
+}
+
+.minhaclasse
+{
+    font-weight: bold;
+    text-align: center;
+}

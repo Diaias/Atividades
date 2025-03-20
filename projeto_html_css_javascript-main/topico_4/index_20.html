@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript para datas - 11º Exemplo</title>
+        <script>
+            //https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date
+            //https://www.w3schools.com/js/js_date_methods.asp
+            //recupera a data atual do Computador
+            //documentação sobre a classe Date : https://www.w3schools.com/jsref/jsref_obj_date.asp
+            
+            //criacao/declaracao da variavel data_atual
+            //essa variavel é inicalizada com uma instancia
+            //da classe Date
+            //essa instância conterá a data atual.
+            var data_atual = new Date();
+
+            var hora_formatada = data_atual.getHours() +
+                                 " - " + 
+                                 data_atual.getMinutes()+ 
+                                 " - " + 
+                                 data_atual.getSeconds();  
+                                 
+            var data_formatada = "";                     
+
+            var v1 = 15;
+            var v2 = 16;
+            var v3 = v1 + " " + v2;
+            var v4 = v1 + v2;
+            //imprima na página o conteudo da
+            //variavel v4.
+
+            var data_especifica = new Date("1983/09/25");
+            var data_antiga = new Date("1983/09/25");
+           
+            var data_inicio_ano = new Date("2024/00/01");
+
+        </script>
+    </head>
+    <body>
+
+        <p> 
+            Data atual (estática): 04/09/2024
+        </p>
+
+        <p>            
+            Impressão do conteúdo da variavel hora_formatada:
+            <script>document.write(hora_formatada)</script>
+        </p>
+
+        <p style="color:  green; font-weight: bold;">            
+            Questão 1: Impressão da data no formato dd/mm/yyyy:
+            <script>document.write("")</script>
+        </p>
+
+
+        <p style="color:  green; font-weight: bold;">            
+            Questão 2: Impressão da quantidade de segundos decorridos no dia atual:
+            <script></script>
+        </p>
+
+        <p style="color:  green; font-weight: bold;">            
+            Questão 3: Impressão da quantidade de segundos decorridos no ano:
+            <script>       </script>
+        </p>
+
+        <p style="color:  green; font-weight: bold;">            
+            Questão 4: Impressão de dias decorridos no ano:
+            <script> documento.write((data_atual.getMilliseconds() - data_inicio_ano.getMilliseconds())  / 1000 / 60 / 60 / 24)   </script>
+        </p>
+
+        <p>            
+            Impressão do conteúdo da variavel v3:
+            <script>document.write(v3)</script>
+        </p>      
+
+
+
+        <p>
+            <script>document.write(data_atual)</script>
+        </p>
+
+        <p>
+            <script>document.write(hora_formatada)</script>
+        </p>
+
+        <p>
+            Impressão do conteúdo da variável v4:
+            <script>document.write(v4)</script>
+        </p>
+
+        <p>
+            Data específica:
+            <script>document.write(data_especifica)</script>
+        </p>
+
+
+        <p style="color:  green; font-weight: bold;">
+            Questão 4: Operações com datas (explicar o resultado):
+            <script>document.write(data_atual > data_antiga)</script>
+        </p>
+
+     
+
+    </body>
+</html>    

@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Manipulando Vetores e table - 22º Exemplo</title>
+        <script src="../topico_4/js/jquery-3.5.1.min.js"></script>
+        <style>
+            .centro{
+                margin-top: 5%;
+                margin-left:  30%;
+                margin-right: 20%;
+            }    
+            .formcontrol{
+               margin: 5px;
+               
+            }
+
+            .alinhamento{
+                width: 30%;
+                float: left;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="centro">
+
+            <table id="tabelaAlunos" border="1">
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">RG</th>                     
+                    <th scope="col">Logradouro</th>
+                    <th scope="col">Número</th>                    
+                    <th scope="col">CEP</th>
+                    <th scope="col">Telefone</th>
+                               
+                </tr> 
+                <tbody id="corpoTabela">     
+                    
+                    
+                </tbody>
+
+            </table>
+
+        </div>       
+
+    </body>
+    <script type="text/javascript">
+
+        //Jquery permite para executar uma function após o click em um botão:
+        $(document).ready(function() {
+            // {   } - objeto.
+            // [   ] - array
+            // padrao JSON  atributo : valor.
+
+            //atividade 1:
+            // incluir o RG.
+            // adicionar mais dois elementos no vetor dados.
+            // adicionar uma coluna na tabela e acertar os cabeçalhos.
+            //alterar a estrutura de repetição para listar todas as 
+            //informações.
+            //JSON
+            var dados = [ {codigo: 1, nome: "Telmo", rg: "999",
+                                    endereco: {logradouro: "rua abc", numero: 123, cep: "99"}, 
+                                       tel: "(54) 3045 4855"},
+                          {codigo: 2, nome: "Fernanda", rg: "",                                   
+                                    endereco: {logradouro: "rua abc", numero: 12, cep: "98"}, 
+                                    tel: "(54) 99185 2577"},
+                          {codigo: 3, nome: "Fulano", rg: "",
+                                    endereco: {logradouro: "rua das camélias", numero: 29, cep: "97"},  
+                                    tel: "(11) 2022 0011"},
+                          {codigo: 4, nome: "Ciglano", rg: "",
+                                    endereco: {logradouro: "rua das andradas", numero: 22, cep: "96"},  
+                                    tel: "(54) 3313 5433"},
+                          {codigo: 5, nome: "teste", rg: "",
+                                    endereco: {logradouro: "rua das andradas", numero: 22, cep: "96"},  
+                                    tel: "(54) 3313 5433"},
+                          {codigo: 6, nome: "Ciglano", rg: "",
+                                    endereco: {logradouro: "rua das andradas", numero: 22, cep: "96"},  
+                                    tel: "(54) 3313 5433"}
+
+                          
+
+
+                        ];
+            // atividade 2:
+            // 1) incluir dois objetos na variavel dados
+            // 2) imprimir na tabela todos os atributos e elementos 
+            //    da variável dados.
+            var tabela = document.getElementById("tabelaAlunos");
+            
+            for(var i=0; i < dados.length; i++){
+
+                var linha = tabela.insertRow(tabela.rows.length);
+                var celula0 = linha.insertCell(0);
+                celula0.textContent = dados[i].codigo;
+                
+                var celula1 = linha.insertCell(1); 
+                celula1.textContent = dados[i].nome;
+
+                var celula2 = linha.insertCell(2); 
+                celula2.textContent = dados[i].rg;
+                
+                var celula3 = linha.insertCell(3); 
+                celula3.textContent = dados[i].endereco.logradouro;
+
+                var celula4 = linha.insertCell(4); 
+                celula4.textContent = dados[i].endereco.numero;
+
+                var celula5 = linha.insertCell(5); 
+                celula5.textContent = dados[i].endereco.cep;
+                
+                var celula6 = linha.insertCell(6); 
+                celula6.textContent = dados[i].tel;                
+            } 
+                               
+        });
+
+        
+
+    </script>
+
+</html>  

@@ -1,0 +1,241 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Table, funções, parâmetros e LocalStorage - 26º Exemplo</title>
+        <script src="../topico_4/js/jquery-3.5.1.min.js"></script>
+        <style>
+            .centro{
+                margin-top: 5%;
+                margin-left:  30%;
+                margin-right: 20%;
+            }    
+            .formcontrol{
+               margin: 5px;
+               
+            }
+
+            .alinhamento{
+                width: 30%;
+                float: left;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="centro">
+
+            <table id="tabelaAlunos" border="1">
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Curso</th>
+                    <th scope="col">Data Nascimento</th>  
+                    <th scope="col">Remover</th>
+                    <th scope="col">Editar</th>                                 
+                </tr> 
+                <tbody id="corpoTabela">
+
+                </tbody>
+
+            </table>
+
+        </div>
+        <div class="centro">
+
+            <div class="formcontrol">
+                <div class="alinhamento">
+                    <label for="inputCodigo">Código:</label>
+                </div>
+                <input type="number"  id="inputCodigo">
+            </div>
+
+            <div class="formcontrol">
+                <div class="alinhamento">
+                    <label for="inputNome">Nome:</label>
+                </div>
+                <input type="text"  id="inputNome">
+            </div>
+
+            <div class="formcontrol">
+                <div class="alinhamento">
+                    <label for="inputDTNasc">Data Nascimento:</label>
+                </div>
+                <input type="date"  id="inputDTNasc">
+            </div>
+
+            <div class="formcontrol">
+                <div class="alinhamento">
+                    <label for="selectCurso">Curso:</label>
+                </div>
+                <select id="selectCurso" name="curso">
+                    <option selected>Selecione</option>
+                    <option>Ciência da Computação</option>
+                    <option>Ciências Biológicas</option>
+                </select>
+            </div>
+
+            <div class="formcontrol">
+                <input type="button" id="btnCadastrar" value="Salvar">
+            </div>
+
+        </div>
+
+    </body>
+    <script type="text/javascript">
+
+        var dados = [];        
+        var indiceDados = -1;
+
+        //verifica a existencia do item/chave/atributo no armazenamento local 
+        if(localStorage.getItem("dados_alunos") == null){
+            //caso não exista cria o item jogadores.
+            localStorage.setItem("dados_alunos" , JSON.stringify([]));                        
+        }else{            
+            //se existir, realiza o parse e armazena na variável jogadores.
+            dados = JSON.parse(localStorage.getItem("dados_alunos"));
+            populaTabela();
+        }
+
+        function limpaTabela(){
+            
+            var tabela = document.getElementById("tabelaAlunos");
+            var qtd_rows = tabela.rows.length;
+
+            for(var i=1; i < qtd_rows; i++){
+            
+                tabela.deleteRow(1);
+            
+            }
+            
+        }
+
+
+        function populaTabela(){
+
+            var tabela = document.getElementById("tabelaAlunos");
+            
+            for(var i=0; i < dados.length; i++){
+
+                var linha = tabela.insertRow(tabela.rows.length);
+
+                var celula0 = linha.insertCell(0);
+                celula0.textContent = dados[i].codigo;
+
+                var celula1 = linha.insertCell(1); 
+                celula1.textContent = dados[i].nome;
+
+                var celula2 = linha.insertCell(2); 
+                celula2.textContent = dados[i].datanascimento;
+
+                var celula3 = linha.insertCell(3);
+                celula3.textContent = dados[i].curso;
+
+                var celula4 = linha.insertCell(4);
+                celula4.innerHTML = "<input type=\"button\" onclick=\"remover("+i+")\" value=\"Remover\">";
+
+                var celula5 = linha.insertCell(5);
+                celula5.innerHTML = "<input type=\"button\" onclick=\"editar("+i+")\" value=\"Editar\">";
+
+
+            }
+        
+        }
+        
+        function editar(indice){
+        
+            document.getElementById("inputCodigo").value = dados[indice].codigo;
+            document.getElementById("inputNome").value = dados[indice].nome;
+            document.getElementById("inputDTNasc").value = dados[indice].datanascimento;
+            document.getElementById("selectCurso").value = dados[indice].curso;
+
+            indiceDados = indice;
+
+        }
+
+        //indice: representa o parametro da funcao remover
+        //parametros são informaçoes que devem ser fornecidas
+        //no momento da chamada da funcao.
+        //nesse caso, o parametro indice vai conter a informação
+        //da variavel i.
+        function remover(indice){
+
+            var decisao = confirm('Deseja realmente remover ?');
+            //alert(decisao);
+            if(decisao == true){
+                //metodo splice: remove um determinado conjunto de elementos
+                //de um vetor. No caso abaixo, irá remover um elemento
+                //do vetor dados indicado pelo indice "indice".
+                // o 1 representa a quantidade de elementos que serão removidos
+                dados.splice(indice, 1);
+
+                //atualiza o armazenamento local
+                localStorage.setItem("dados_alunos" , JSON.stringify(dados));
+
+                limpaTabela();
+
+                populaTabela();            
+            }
+        }
+
+        function resetFormulario(){
+
+            document.getElementById("inputCodigo").value = "";
+            document.getElementById("inputNome").value = "";
+            document.getElementById("inputDTNasc").value = "";
+            document.getElementById("selectCurso").value = "Selecione";
+
+            indiceDados = -1;
+        }
+
+        //Jquery permite para executar uma function após o click em um botão:
+        $("#btnCadastrar").click(function(){
+
+            //documentação sobre o método getElementById: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+            
+            if(document.getElementById("inputCodigo").value > 0 &&
+               document.getElementById("inputCodigo").value <= 100){
+                
+                if(document.getElementById("inputNome").value.trim().length > 4 &&
+                   document.getElementById("inputNome").value.trim().length < 21){
+                    //validar os demais campos: data e curso.
+
+                    var aluno = {"codigo": document.getElementById("inputCodigo").value,
+                         "nome"  : document.getElementById("inputNome").value,
+                         "datanascimento" : document.getElementById("inputDTNasc").value,
+                         "curso" : document.getElementById("selectCurso").value};
+
+                    if(indiceDados == -1){
+                        //incluir novo  elemento.
+                        dados.push(aluno);  
+                    }else{
+                        //alterar elemento existente.
+                        dados[indiceDados] = aluno;
+                    }
+                    //atualiza o armazenamento local
+                    localStorage.setItem("dados_alunos" , JSON.stringify(dados));
+
+                    resetFormulario();
+
+                    limpaTabela();
+
+                    populaTabela();
+
+                }else{
+                    alert("Nome inválido !!");
+                }
+            }else{
+
+                alert("Código inválido!")
+            } 
+           
+        });
+
+
+
+        
+
+    </script>
+
+</html>  

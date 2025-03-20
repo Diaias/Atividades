@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tópico 1 - Exemplo 2 - Tabelas e atributos</title>
+    </head>
+    <body>
+
+        <div>
+
+            <div>
+                <h1>Tabela com duas linhas e duas colunas</h1>
+                <table>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <h1>Tabela com duas linhas e três colunas</h1>
+                <table>
+                    <tr>
+                        <td style="border: 1px;border-style: solid;">1</td>
+                        <td style="border: 1px;border-style: solid;">2</td>
+                        <td style="border: 1px;">3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>                        
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <h1>Tabela com colunas mescladas na primeira linha</h1>
+                <table>
+                    <tr>
+                        <td colspan="3" style="border: 1px;border-style: solid;">Título</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px;border-style: solid;">Primeira célula</td>
+                        <td style="border: 1px;border-style: solid;">Segunda célula</td>
+                        <td style="border: 1px;">Terceira célula</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>                        
+                    </tr>
+                </table>
+            </div>
+
+            <div>
+                <h1>Tabela com a terceira e quarta linha mesclada na primeira coluna</h1>
+                <table>
+                    <tr>
+                        <td colspan="3" style="border: 1px;border-style: solid;">Título</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px;border-style: solid;">Primeira célula</td>
+                        <td style="border: 1px;border-style: solid;">Segunda célula</td>
+                        <td style="border: 1px;">Terceira célula</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="border: 1px;border-style: solid;">4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>                        
+                        <td>7</td>
+                        <td>8</td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+        </div>
+        <div>
+
+        
+            <h1>Exemplo de tabela</h1>
+
+
+            <table style="text-align:center; border:10px solid;">
+                <!--    comentários em HTML -->
+                <tr>
+                    <td style="border:1px solid; text-align: center; font-weight: bold;" colspan="3">topo da tabela</td>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+               
+                <tr>
+                    <td style="border:1px solid">Atributo/estilização:</td>
+                    <td style="border:1px solid">Significado/Valores:</td>
+                    <td style="border:1px solid" rowspan="4">Comandos:</td> 
+                </tr>
+                <tr>
+                    <td style="border:1px solid">width</td>
+                    <td style="border:1px solid">define a borda da tabela, ex: 1, 2</td>                  
+                </tr>
+                <tr>
+                   <td style="border:1px solid">border</td>
+                   <td  style="border:1px solid">define a borda da tabela, ex: 1, 2</td>                  
+                </tr>
+                <tr>
+                    <td style="border:1px solid">align</td>
+                    <td style="border:1px solid">Este atributo enumerado indica como a tabela deve ser alinhada<br>considerando o conteúdo do documento, ex: left, center, right</td>
+                </tr>       
+                <tr>
+                    <td style="border:1px solid" colspan="3">rodapé da tabela</td>
+                </tr>  
+
+            </table>
+
+
+        </div>        
+
+
+    </body>
+</html>

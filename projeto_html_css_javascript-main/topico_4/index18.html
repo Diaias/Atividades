@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Formulário para Calculadora - 18º Exemplo</title>
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <style>
+            .form{
+                margin-top: 10%;
+                margin-left:  40%;
+                margin-right: 20%;
+            }    
+            .formcontrol{
+               margin: 10px;
+               
+            }
+            .botao {
+                width: 60;
+                height: 20;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="form">
+
+                <div class="formcontrol">
+                    <input type="text" value="" id="inputTexto" readonly size="30">
+                </div>
+                <div class="formcontrol">
+                    <input type="button" value="7" id="btn7" class="botao">
+                    <input type="button" value="8" id="btn8" class="botao">
+                    <input type="button" value="9" id="btn9" class="botao">
+                    <input type="button" value="+" id="btnSoma" class="botao">
+                </div>
+                <div class="formcontrol">
+                    <input type="button" value="4" id="btn4" class="botao">
+                    <input type="button" value="5" id="btn5" class="botao">
+                    <input type="button" value="6" id="btn6" class="botao">
+                    <input type="button" value="-" id="btnSubtracao" class="botao">
+                </div>
+                
+                <div class="formcontrol">
+                    <input type="button" value="1" id="btn1" class="botao">
+                    <input type="button" value="2" id="btn2" class="botao">
+                    <input type="button" value="3" id="btn3" class="botao">
+                    <input type="button" value="/" id="btnDivisao" class="botao">
+                </div>
+                <div class="formcontrol">
+                    <input type="button" value="0" id="btn0" class="botao">
+                    <input type="button" value="," id="btnVirgula" class="botao">  
+                    <input type="button" value="C" id="btnReset" class="botao">    
+                    <input type="button" value="*" id="btnMultiplicacao" class="botao">                  
+                </div>
+                <div class="formcontrol">                      
+                    <input type="button" value="=" id="btnIgual" style="width: 130px;">    
+                    
+                    <input type="button" value="X²" id="btnPotenciaQuadrado" class="botao">                        
+                </div> 
+
+            </div>
+
+    </body>
+    <script type="text/javascript">
+
+        //Jquery permite para executar uma function após o click em um botão:
+        
+        $("#btnReset").click(function(){
+
+            document.getElementById("inputTexto").value = "";
+
+        });
+
+        $("#btnVirgula").click(function(){
+
+            //documentação sobre o método getElementById: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+            var texto = document.getElementById("inputTexto").value;
+
+            texto = texto + ".";
+
+            document.getElementById("inputTexto").value = texto;
+        
+        });
+
+        $("#btn0").click(function(){
+
+            //documentação sobre o método getElementById: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+            //recuperacao da informacao que está no visor.
+            var texto = document.getElementById("inputTexto").value;
+
+            //concatenacao do caracter
+            texto = texto + "0";
+
+            //atualizacao do visor.
+            document.getElementById("inputTexto").value = texto;
+
+        
+        });
+
+        $("#btn1").click(function(){
+
+            //documentação sobre o método getElementById: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+            //recuperacao da informacao que está no visor.
+            var texto = document.getElementById("inputTexto").value;
+
+            //concatenacao do caracter
+            texto = texto + "1";
+
+            //atualizacao do visor.
+            document.getElementById("inputTexto").value = texto;
+        
+        });
+
+
+        $("#btnSoma").click(function(){
+
+            //documentação sobre o método getElementById: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+            var texto = document.getElementById("inputTexto").value;
+
+            var posicao = texto.indexOf("+"); 
+            if(posicao == -1){
+                //concatena o caracter + na variavel
+                texto = texto + "+";
+
+                //atualiza o input
+                document.getElementById("inputTexto").value = texto;
+            }else{
+
+                alert("Caracter + já foi inserido !!");
+            }            
+        });
+
+        $("#btnSubtracao").click(function(){
+
+       
+
+        });
+
+        $("#btnIgual").click(function(){
+
+            //documentação sobre o método getElementById: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+            var texto = document.getElementById("inputTexto").value;
+
+            //se a variavel texto contiver o caracter + o método indexOf irá retornar o indice desse caracter
+            //documentacao sobre o metodo indexOF : https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf
+            
+            var posicao_mais = texto.indexOf("+"); 
+
+            var posicao_menos = texto.indexOf("-");
+            
+            var posicao_div = texto.indexOf("/");
+            
+            var posicao_multi = texto.indexOf("*");
+            
+            if(posicao_mais > -1){
+
+                //documentacao sobre o método substring: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+                //substring: retorna uma nova string a partir de um ponto inicial e final.
+                var p1 = texto.substring(0, texto.indexOf("+"));
+                p1 = parseFloat(p1);
+                
+                var p2 = texto.substring(texto.indexOf("+")+1, texto.length);
+                p2 = parseFloat(p2);
+
+                if(isNaN(p1) || isNaN(p2)){
+                    alert("Operadores inválidos !!");
+                }else{
+                    //atualiza o input
+                    document.getElementById("inputTexto").value = p1 + p2;                
+                }
+                
+            }else if (posicao_menos > -1) {
+            
+            }else{
+
+                alert("Operação inválida!");
+
+            }
+
+        });
+
+    </script>
+
+</html>  

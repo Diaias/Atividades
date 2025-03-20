@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <!-- Com base no exemplo index15.html implemente a seguinte funcionalidade:
+        
+            1) Adicione um campo no formulário para o Usuário informar o percentual de 
+               desconto (imput type='range')
+            2) Após a submissão do formulário valide o percentual (entre 0 e 100).
+                                              valide a quantidade (entre 1 e 1000).
+                                              valide o valor      (entre 0 e 10000).
+            3) Calcular o valor total. 
+            4) Apresente as informações no formulário após a submissão e renderização.
+            5) Resolver o problema relatado nas mensagens de atenção (F12 -> Console)
+               The specified value "NaN" cannot be parsed, or is out of range.    
+        -->
+        <meta charset="utf-8">
+        <title>JavaScript recuperando dados do documento - Exercício 3</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <style>
+            .form{
+                margin-top: 5%;
+                margin-left:  30%;
+                margin-right: 20%;
+            }    
+            .formcontrol{
+               margin: 5px;
+            }
+
+            .alinhamento{
+                width: 40%;
+                float: left;
+            }
+        </style>
+
+    </head>
+    <body>
+        <form id="formCalculaItem" action="#" method="get">
+            <div class="form">
+                <div class="formcontrol">
+                    <div class="alinhamento">
+                        <label for="nome">Nome da Mercadoria:</label>
+                    </div>
+                    <input id="inputNome"  type="text" name="nome" value=""/>
+                </div>
+                <div class="formcontrol">
+                    <div class="alinhamento">
+                        <label for="peso">Valor da Mercadoria:</label>
+                    </div>
+                    <input type="number" name="valor" id="inputValor" size="10" step="0.1" value="0"/>
+                </div>
+
+                <div class="formcontrol">
+                    <div class="alinhamento">
+                        <label for="peso">Quantidade da Mercadoria:</label>
+                    </div>
+                    <input type="number" name="quantidade" id="inputQuantidade" size="10"/>
+                </div>
+
+                <div class="formcontrol">
+                    <div class="alinhamento">
+                        <label for="peso">Percetual:</label>
+                    </div>
+                    <div class="alinhamento">
+                        <input type="range" name="percentual" id="inputPercentual" min="0" max="100"/>
+                    </div>
+                </div>
+
+                <div class="formcontrol">
+                    <div class="alinhamento">
+                        <label for="total">Total:</label>
+                    </div>
+                    <input type="number" name="total" id="inputTotal" size="5" value="0" readonly/>
+                </div>
+                
+                <input type="submit" value="Calcular">
+            </div>
+        </form>
+
+    </body>
+    <script type="text/javascript">
+
+     
+
+    </script>
+
+</html>  

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Formulários estilados : CSS e modelo de caixa </title>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+        <style>
+
+            #paragrafo1 {
+                text-align: center;
+                color: rgb(255, 0, 0);
+            }
+
+            #paragrafo2 {
+                text-align: left;
+                color: rgb(0, 255, 0);
+            }
+            
+            .sublinhado {
+
+                text-decoration: underline
+            }
+
+            .boxmodel1 {
+                
+                margin: 20px;/*espaços a direita, esquerda, superior e inferior*/
+                
+                border: 5px;/*largura da borda do box*/
+                border-style: dotted;/*estilo da borda*/
+                border-color: black;/*cor da borda*/
+                background: rgb(248, 188, 188);
+   
+                padding: 20px;/*espaçamentos entre o padding e o content */    
+                
+                color: rgb(8, 163, 21);  
+
+                width: 300px;/*largura do content*/                
+                height: 40px;/*altura do content*/
+                
+                float: right;
+                margin-right: 35%;
+            }
+
+            .boxmodel2 {
+                
+                margin: 20px;/*espaços a direita, esquerda, superior e inferior*/
+                
+                border: 5px;/*largura da borda do box*/
+                border-style: dotted;/*estilo da borda*/
+                border-color: black;/*cor da borda*/
+                background: rgb(248, 188, 188);
+   
+                padding: 20px;/*espaçamentos entre o padding e o content */    
+                
+                color: rgb(8, 163, 21);  
+
+                width: 300px;/*largura do content*/                
+                height: 40px;/*altura do content*/
+                
+                clear: both;
+                float: left;
+            }
+
+            .boxmodel3 {
+                
+                margin: 20px;/*espaços a direita, esquerda, superior e inferior*/
+                
+                border: 5px;/*largura da borda do box*/
+                border-style: dotted;/*estilo da borda*/
+                border-color: black;/*cor da borda*/
+                background: rgb(248, 188, 188);
+   
+                padding: 20px;/*espaçamentos entre o padding e o content */    
+                
+                color: rgb(8, 163, 21);  
+
+                width: 300px;/*largura do content*/                
+                height: 40px;/*altura do content*/
+
+               /* clear: both;*/ /*limpa a flutuação em ambos os lados*/
+                float: right;
+                
+                /*margin-left: 5%;*/
+                 
+            }
+
+        </style>
+    </head> 
+    <body>
+
+        <div id=“principal”>
+
+            <div id=“menu”>
+                <!--https://developer.mozilla.org/pt-BR/docs/Web/CSS/text-decoration -->
+                <p id="paragrafo1" class="sublinhado">Formulário para Cadastro Cliente  - BoxModel.</p>
+
+            </div>
+
+            <div id=“formulario” >
+
+                <p  id="paragrafo2" >Preencha os campos abaixo: </p>                
+
+                <form id="formindex5" action="#" method="post">
+
+                    <div class="boxmodel1">
+                        <label id="lblNome" for="nome" style="font-weight: bold;">(boxmodel1) Nome:<label><br>
+                        <input id="nome" type="text" name="nome" size="25">          
+                    </div>
+
+                    <div class="boxmodel2">
+                        <label id="lblEndereco" for="endereco" style="font-weight: bold;">(boxmodel2) Endereço:<label><br>
+                        <input id="endereco" type="text" name="endereco" size="30">
+                    </div>
+
+                    <div class="boxmodel3">
+                        <label id="lblTelefone" for="telefone" style="font-weight: bold;">(boxmodel3) Telefone:<label><br>
+                        <input id="telefone" type="text" name="telefone" size="10">
+                    </div>
+        
+                </form>
+
+            </div>
+        </div>
+
+    </body>
+
+</html>

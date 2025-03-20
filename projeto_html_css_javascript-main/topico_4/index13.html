@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript, entrada de dados e conversões - 13º Exemplo</title>
+        <script>
+            var n1, n2, soma;
+
+            //1) Implementar a média de três valores decimais.
+            
+
+            //Documentação sobre o pacote Window: https://www.w3schools.com/jsref/met_win_prompt.asp
+
+            //The prompt() method displays a dialog box that prompts the user for input.
+            //The prompt() method returns the input value if the user clicks "OK", otherwise it returns null.
+            n1 = prompt("Informe um número inteiro : ");
+            //como o prompt retorna uma String é necessário fazer a conversão. para inteiro.
+            //documentação sobre o método parseInt: https://www.w3schools.com/jsref/jsref_parseint.asp
+            n2 = prompt("Informe um novo número inteiro: ");
+
+            //alert("variavel n1 : " + n1);//gera uma janela de alerta imprimindo na tela o conteudo da variavel n1
+            //alert("variavel n2 : " + n2);
+
+            n1 = parseInt(n1);//o metodo parseInt converte String para Int
+            //alert(n1);//gera uma janela de alerta com a informação contida em n1
+
+            n2 = parseInt(n2);//converte
+            //alert(n2);//gera uma janela
+
+            //estrutura de seleção: if/else
+            //se a expressão retornar true, executa os comandos que estão dentro do corpo do if
+            //se a expressão retornar false, executa os comandos que estão dentro do else.
+            if(isNaN(n1) || isNaN(n2)){
+                alert("Não foi possível realizar a soma, informe valores inteiros !");
+                soma = 0;
+            }else{
+                soma =  n1 + n2 ;//soma e depois atribui
+            }
+           //verificar se o retorno do parseInt é um number utilizando
+           //o método isNaN().
+        </script>
+    </head>
+    <body>
+        <p><span>
+            <strong>Soma:</strong>
+            </span>
+            <script>
+                 //documentacao sobre o método write: https://www.w3schools.com/jsref/met_doc_write.asp
+                 document.write(soma);
+            </script>   
+        </p>
+    </body>
+</html>  

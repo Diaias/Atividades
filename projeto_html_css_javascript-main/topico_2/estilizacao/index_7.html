@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Formulários estilados : CSS e modelo de caixa </title>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+        <style>
+
+            #paragrafo1 {
+                text-align: right;
+                color: rgb(255, 0, 0);
+            }
+
+            #paragrafo2 {
+                text-align: left;
+                color: rgb(0, 255, 0);
+            }
+
+            .sublinhado {
+
+                text-decoration: underline
+            }
+
+            .boxmodel1 {
+                
+                margin: 10px;/*espaços a direita, esquerda, superior e inferior*/                
+                border: 5px;/*largura da borda do box*/
+                border-style: groove;/*estilo da borda*/
+                border-color: aquamarine;/*cor da borda*/
+                background: rgba(255, 34, 0, 0.415);
+
+                padding: 5px;/*espaçamentos entre a borda e o content */    
+                
+                /* cor da letra */
+                color: black;  
+
+                width: auto;/*largura do content*/                
+                height: auto;/*altura do content*/
+                
+            }
+
+        </style>
+    </head> 
+    <body>
+
+        <div id=“principal”>
+
+            <div id=“menu”>
+                <!--https://developer.mozilla.org/pt-BR/docs/Web/CSS/text-decoration -->
+                <p id="paragrafo1" class="sublinhado">Formulário para Cadastro Cliente  - BoxModel.</p>
+
+            </div>
+
+            <div id=“formulario”>
+
+                <p  id="paragrafo2" >Preencha os campos abaixo: </p>                
+
+                <form id="formindex5" action="#" method="post">
+
+                    <div class="boxmodel1">
+                        <label id="lblNome" for="nome" style="font-weight: bold;">Nome:<label><br>
+                        <input id="nome" type="text" name="nome" size="15px">          
+                    </div>
+
+                    <div class="boxmodel1">
+                        <label id="lblEndereco" for="endereco" style="font-weight: bold;">Endereço:<label><br>
+                        <input id="endereco" type="text" name="endereco" size="40px">
+                    </div>
+
+                    <input type="submit" value="Salvar">
+
+                    <div class="boxmodel1">
+                        <label id="lblCidade" for="cidade" style="font-weight: bold;">Cidade:<label><br>
+                        <select name="cidade" id="cidade" size="auto">
+                            <option value="Passo Fundo">Passo Fundo</option>
+                            <option value="Porto Alegre">Porto Alegre</option>
+                            <option value="Caxias">Caxias</option>
+                            <option value="Gramado">Gramado</option>
+                        </select>
+                    </div>
+
+                    <input type="submit" value="Salvar">
+        
+                    <div class="boxmodel1">
+                        <label id="lblObservacao" for="observacao" style="font-weight: bold;">Observação:<label><br>
+                        <textarea name="observaca" id="obs" cols="30" rows="10" ></textarea>
+                    </div>
+
+                    <input type="submit" value="Salvar">
+        
+        
+                </form>
+
+            </div>
+            <div>
+                <p class="fonte">BoxModel: o modelo de caixa para design com CSS consiste em:<p>
+                    <ul>
+                        <li>Uma "caixa" que envolve o elemento e é subdividida em:</li>
+                        <ul>
+                            <li>margem</li>
+                            <li>borda</li>
+                            <li>preenchimento</li>
+                            <li>conteúdo: width e height</li>
+                            
+                        <ul>
+                    </ul>
+
+                    <p>Visualização do BoxModel pelo F12: </p>
+                    <img src="./imagens/boxmodel_exemple.png" width="50%" height="50%">            
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exercicio de revisao: formulário. 3</title>
+        <style>
+
+ 
+            .boxmodel1 {
+                
+                margin: 20px;/*espaços a direita, esquerda, superior e inferior*/
+                
+                border: 5px;/*largura da borda do box*/
+                border-style: dotted;/*estilo da borda*/
+                border-color: black;/*cor da borda*/
+                background: rgb(248, 188, 188);
+   
+                padding: 20px;/*espaçamentos entre o padding e o content */    
+                
+                color: rgb(8, 163, 21);  
+
+                width: 300px;/*largura do content*/                
+                height: 40px;/*altura do content*/
+                
+                float: left;
+            }
+
+            .boxmodel2 {
+                
+                margin: 20px;/*espaços a direita, esquerda, superior e inferior*/
+                
+                border: 5px;/*largura da borda do box*/
+                border-style: dotted;/*estilo da borda*/
+                border-color: black;/*cor da borda*/
+                background: rgb(248, 188, 188);
+   
+                padding: 20px;/*espaçamentos entre o padding e o content */    
+                
+                color: rgb(8, 163, 21);  
+
+                width: 300px;/*largura do content*/                
+                height: 40px;/*altura do content*/
+                
+                float: right;
+            }
+
+            .boxmodel3 {
+                
+                margin: 20px;/*espaços a direita, esquerda, superior e inferior*/
+                
+                border: 5px;/*largura da borda do box*/
+                border-style: dotted;/*estilo da borda*/
+                border-color: black;/*cor da borda*/
+                background: rgb(248, 188, 188);
+   
+                padding: 20px;/*espaçamentos entre o padding e o content */    
+                
+                color: rgb(8, 163, 21);  
+
+                width: 300px;/*largura do content*/                
+                height: 40px;/*altura do content*/
+
+                clear: both;
+                float: left;
+                
+                /*margin-left: 5%;*/
+                 
+            }
+
+        </style>
+    </head> 
+    <body>
+
+        <div id=“principal”>
+            <div>
+                <div id=“faixaazulclaro” style="float: left; background: rgb(0, 0, 240); width: 30%; height: 5%; ">
+                    Não é associado?
+                </div>
+    
+                <div id=“faixaazulescuro” style="float: left; background: rgb(131, 131, 240);  width: 30%; height: 5%; ">
+                    <label>&nbsp;</label>
+                </div>
+            </div>
+            <div style="clear: both; padding: 5px;">
+                <div style="width: 20%; float: left;">
+                    <div style="width: 15%;">
+                        <label>Nome</label>
+                    </div>
+                </div>
+                <div>
+                    <input type="text" size="25%">
+                </div>
+            </div>
+            <div style="clear: both; padding: 5px;">
+                <div style="width: 20%;float: left; ">
+                    <div style="width: 10%;">
+                        <label>Nome Completo</label>
+                    </div>
+                </div>
+                
+                <div>
+                    <input type="text" size="25%">
+                </div>
+            </div>
+            
+          
+        </div>
+
+    </body>
+
+</html>

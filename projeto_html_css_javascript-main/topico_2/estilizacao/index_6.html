@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Formulários</title>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+        <!--criar uma customização para a tag label -->
+        <style>
+            label{
+                font-family: "Lucida Console", "Courier New", monospace;
+            }
+            h1{
+                text-align: center;
+                color: rgb(0, 255, 85);
+            }
+            #paragrafo1 {
+                text-align: center;
+                color: rgb(164, 20, 4);
+            }
+            #paragrafo2 {
+                text-align: left;
+                color: rgb(0, 255, 0);
+                font-weight: bold;
+            }            
+            .sublinhado {
+                text-decoration: underline
+            }
+        </style>
+    </head> 
+    <body>
+        <!-- Definir uma nova classe css para alterar a cor de fundo
+             Essa nova classe deverá ser aplicada no div id=principal.  
+             Implementar os exercícios 6 e 7.
+        -->
+        <div id=“principal” class="fundo">           
+            <h1 class="sublinhado minhaclasse">Primeiro exemplo de estilização</h1>
+            <p>Atributo <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/style">style</a>:</p>
+            <h1 class="sublinhado">index_6.html</h1>
+            <p class="minhaclasse">Exemplo</p>
+            <div id=“menu”>
+                <!--https://developer.mozilla.org/pt-BR/docs/Web/CSS/text-decoration -->
+                <p id="paragrafo1" class="sublinhado">Formulário para Cadastro Cliente.</p>
+            </div>
+
+            <div id=“formulario”>
+
+                <p  id="paragrafo2" >Preencha os campos abaixo: </p>                
+
+                <form id="formindex5" action="#" method="post">
+
+                    <div>
+
+                        <!--https://developer.mozilla.org/pt-BR/docs/Web/CSS/font-weight-->
+
+                        <label id="lblNome" for="nome" style="font-weight: bold;">Nome:<label>
+                        <input id="nome" type="text" name="nome">          
+                    </div>
+
+                    <div>
+                        <label id="lblEndereco" for="endereco" style="font-weight: bold;">Endereço:<label>
+                        <input id="endereco" type="text" name="endereco">
+                    </div>
+
+                    <div>
+                        <label id="lblcep" for="cep" style="font-weight: bold;">CEP:<label>
+                        <input id="cep" type="text" name="cep">
+                    </div>
+
+
+                    <input type="submit" value="Salvar">
+        
+                </form>
+
+            </div>
+            <div>
+                <p class="fonte">CSS: seletores através do ID: Especifica o estilo a ser aplicado em apenas um determinado elemento. Definido com um #. Dessa forma, referencia o atributo "id" do elemento HTML  a ser aplciado o estilo.</div>
+                <h1>fim : index6.html</h1>
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

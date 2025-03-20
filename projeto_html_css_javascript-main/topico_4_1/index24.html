@@ -1,0 +1,221 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Table, funções, json e Array - 24º Exemplo</title>
+        <script src="../topico_4/js/jquery-3.5.1.min.js"></script>
+        <style>
+            .centro{
+                margin-top: 5%;
+                margin-left:  30%;
+                margin-right: 20%;
+            }    
+            .formcontrol{
+               margin: 5px;
+               
+            }
+
+            .alinhamento{
+                width: 30%;
+                float: left;
+            }
+
+
+        </style>
+
+    </head>
+    <body>
+        <div class="centro">
+
+            <table id="tabelaAlunos" border="1">
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Curso</th>
+                    <th scope="col">Data Nascimento</th>                          
+                </tr> 
+                <tbody id="corpoTabela">
+
+                </tbody>
+
+            </table>
+
+        </div>
+        <div class="centro">
+
+            <div class="formcontrol">
+                <div class="alinhamento">
+                    <label for="inputCodigo">Código:</label>
+                </div>
+                <input type="number"  id="inputCodigo">
+            </div>
+
+            <div class="formcontrol">
+                <div class="alinhamento">
+                    <label for="inputNome">Nome:</label>
+                </div>
+                <input type="text"  id="inputNome">
+            </div>
+
+            <div class="formcontrol">
+                <div class="alinhamento">
+                    <label for="inputDTNasc">Data Nascimento:</label>
+                </div>
+                <input type="date"  id="inputDTNasc">
+            </div>
+
+            <div class="formcontrol">
+                <div class="alinhamento">
+                    <label for="inputDTCad">Data de Cadastro:</label>
+                </div>
+                <input type="text"  id="inputDTCad" disabled>
+            </div>
+
+            <div class="formcontrol">
+                <div class="alinhamento">
+                    <label for="selectCurso">Curso:</label>
+                </div>
+                <select id="selectCurso" name="curso">
+                    <option selected>Selecione</option>
+                    <option>Ciência da Computação</option>
+                    <option>Ciências Biológicas</option>
+                </select>
+            </div>
+
+            <div class="formcontrol">
+                <input type="button" id="btnCadastrar" value="Cadastrar">
+                <input type="button" id="btnAtualizar" value="Atualizar Tabela">
+            </div>
+
+        </div>
+
+    </body>
+    <script type="text/javascript">
+
+        var dados = [];
+        $(document).ready(function(){
+            
+            var data_atual = new Date();
+            data_formatada = data_atual.getUTCDate()+"/"
+                        +(data_atual.getUTCMonth()+1)+"/"
+                        +data_atual.getFullYear();
+            document.getElementById("inputDTCad").value = data_formatada;
+            
+        
+        })
+
+        //Jquery permite para executar uma function após o click em um botão:
+        $("#btnCadastrar").click(function(){
+
+            //documentação sobre o método getElementById: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+
+            //implementar a validação do formulario.
+            //Codigo: 1 a 1000
+            //Nome: de 1 a 10 caracteres
+            //datanascimento: inferior a data atual.
+            //Curso: Ciencias biológicas ou CC.
+
+            //caso algo esteja errado, informar uma mensagem específica.
+
+            if(document.getElementById("inputCodigo").value > 0 && 
+               document.getElementById("inputCodigo").value < 1001){
+
+                if(document.getElementById("inputNome").value.trim().length > 0 &&
+                   document.getElementById("inputNome").value.trim().length < 11){
+
+                    var data_atual = new Date();
+                    var data_formulario = new Date(document.getElementById("inputDTNasc").value); 
+                    if(data_formulario < data_atual){
+
+                        if(document.getElementById("selectCurso").value != "Selecione"){
+
+                            data_formulario = data_formulario.getUTCDate() + "/" + 
+                                              (data_formulario.getUTCMonth() + 1) + "/" + 
+                                               data_formulario.getFullYear();    
+
+                            var aluno = {"codigo": document.getElementById("inputCodigo").value,
+                            "nome"  : document.getElementById("inputNome").value,
+                            "datanascimento" : data_formulario,
+                            "curso" : document.getElementById("selectCurso").value};
+
+                            // metodo push: adiciona um elemento no final do vetor.
+                            dados.push(aluno);  
+
+                            resetFormulario();//chamada da funcao.
+
+                        }else{
+                            alert("Curso inválido !!");
+                        }
+
+                    }else{
+                        alert("Data inválida !!!")
+                    }
+
+                }else{
+                    alert("Nome inválido !");
+
+                }
+
+            }else{
+                alert("Codigo inválido !");
+            }
+
+        });
+
+        $("#btnAtualizar").click(function(){
+
+            limpaTabela();//chama a funcao limpaTabela()
+
+            //alert("clicou no btnAtualizar");
+
+            populaTabela();//chama a funcao populaTabela()
+
+        });
+
+        function limpaTabela(){            
+            var tabela = document.getElementById("tabelaAlunos");
+            var qtd_rows = tabela.rows.length;            
+            for(var i=1; i < qtd_rows; i++){
+                tabela.deleteRow(i);            
+            }
+        }
+
+        function populaTabela(){
+
+            var tabela = document.getElementById("tabelaAlunos");
+            
+            for(var i=0; i < dados.length; i++){
+
+                var linha = tabela.insertRow(tabela.rows.length);
+
+                var celula0 = linha.insertCell(0);
+                celula0.textContent = dados[i].codigo;
+
+                var celula1 = linha.insertCell(1); 
+                celula1.textContent = dados[i].nome;
+
+                var celula3 = linha.insertCell(2);
+                celula3.textContent = dados[i].curso;
+
+                var celula2 = linha.insertCell(3); 
+                celula2.textContent = dados[i].datanascimento;
+
+            }            
+        }
+
+        function resetFormulario(){
+
+            document.getElementById("inputCodigo").value = "";
+            document.getElementById("inputNome").value = "";
+            document.getElementById("inputDTNasc").value = "";
+            document.getElementById("selectCurso").value = "Selecione";
+        }
+
+
+
+
+
+        
+
+    </script>
+
+</html>  

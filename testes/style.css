@@ -1,0 +1,84 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    font-size: 25px;
+}
+
+button{
+    all:unset;
+}
+button{
+    color: rgb(138, 138, 138);
+    border: 1px;
+    border-color: rgb(138, 138, 138);
+    border-style: solid;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+button:hover{
+    transition: 250ms;
+    color: rgb(0, 0, 0);
+    border-radius: 4px;
+    border: 1px;
+    border-color: rgb(0, 0, 0);
+    border-style: solid;
+    box-shadow: 1px 1px 3px rgb(117, 117, 117);
+}
+button:active{
+}
+
+input {
+    all: unset;
+  }
+  input:hover {
+    all: unset;
+  }
+
+input{
+    color: rgb(138, 138, 138);
+    width: auto;
+    height: 25px;
+    font-size: 25px;
+    border-radius: 4px;
+    border: 1px;
+    border-color: rgb(199, 199, 199);
+    border-style: solid;
+}
+input:hover{
+    transition: 500ms;
+    color: rgb(114, 114, 114);
+    width: auto;
+    height: 25px;
+    font-size: 25px;
+    border-radius: 4px;
+    border: 1px;
+    border-color: rgb(199, 199, 199);
+    border-style: solid;
+}
+input:focus{
+    transition: 250ms;
+    box-shadow: 1px 1px 3px rgb(117, 117, 117);
+    color: black;
+}
+
+.form{
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px rgb(117, 117, 117);
+    padding: 30px;
+    display: flex;
+    margin: 15%;
+    margin-top: 10%;
+}
+
+.formsoma{
+    text-align: justify;
+    width: 50%;
+    text-align: center;
+}
+
+.formconv{
+    text-align: justify;
+    width: 50%;
+    text-align: center;
+}

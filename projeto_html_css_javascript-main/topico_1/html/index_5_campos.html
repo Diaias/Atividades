@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>CPW - Formulários - </title>
+        <!--
+        <script type="text/javascript" 
+            src="https://code.jquery.com/jquery-3.1.1.min.js">
+        </script>
+        -->      
+    </head>
+
+
+    <body>
+        <p>Em muitos casos, a finalidade de HTML Form Um é enviar dados para um servidor. O servidor processa os dados e envia uma resposta ao usuário. <a href="https://developer.mozilla.org/pt-BR/docs/Learn/Forms/Sending_and_retrieving_form_data">Documentação</a></p>
+
+
+        <form id="formindex4" action="#" method="post">
+
+            <label for="nome">Nome:<label>
+            <input id="id_nome" type="text" name="campo_nome">            
+                
+            <label for="sobrenome">Sobrenome:<label>
+            <input id="id_sobrenome" type="text" name="campo_sobrenome">
+
+            <input type="submit" value="Salvar">
+
+        </form>
+
+
+    </body>    
+
+
+    <script type="text/javascript">
+
+        /*
+        $(document).ready(function () {
+        
+            //recupera a url  
+            const queryString = window.location.search;
+
+            //recupera os parâmemtros que estão na url
+            const urlParams = new URLSearchParams(queryString);
+            
+            //acessa o paramentro pelo nome
+            var nome = urlParams.get('nome');            
+
+            //altera o valor no campo
+            document.getElementById("id_nome").value = nome;
+
+            //acessa o paramentro pelo nome
+            var sobrenome = urlParams.get('sobrenome');
+
+            //altera o valor no campo
+            document.getElementById("id_sobrenome").value = sobrenome;
+        
+        });
+
+        */
+
+    </script>
+
+</html>

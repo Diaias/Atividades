@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Formulários</title>
+        <!-- criar uma classe contendo: 
+             flutuacao a direita ou esquerda
+             margem: 10px
+             largura de 20%
+             altura de  20%
+             borda contínua
+             corda da borda preta
+             aplicar essa classe em todas as divs da página
+        -->
+        <style>
+            .formata_divs{
+                float: left;
+                margin: 10px;
+                border-style: solid;
+                width: 15%;
+                height: 20%;
+            }
+        </style>
+    </head>
+    <body>
+       
+        <div class="formata_divs">
+            primeira div
+        </div>
+        <div class="formata_divs">
+            <textarea rows="5" cols="10"></textarea>
+        </div>
+        <div class="formata_divs" style="width: 30%;">
+            <!--posicionar essas duas divs lado a lado-->
+            <div class="formata_divs">sub 2</div>
+            <div class="formata_divs">sub 3</div>
+        </div>
+        <div class="formata_divs">
+            <label>Codigo</label>
+            <input type="text" size="3" value="123">
+        </div>
+    </body>
+</html>
