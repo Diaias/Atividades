@@ -1,6 +1,6 @@
 const inputdecimal = document.getElementById("decimal");
 const inputbinario1 = document.getElementById("binario1");
-const inputbinario2 = document.getElementById("binario2");
+var inputbinario2 = parseInt(document.getElementById("binario2").value)
 const div = document.getElementById("resultado");
 const divsoma = document.getElementById("resultadosoma");
 const botao = document.getElementById("botao");
@@ -10,13 +10,22 @@ botao.addEventListener("click", conversao)
 botao2.addEventListener("click", soma)
 
 function soma() {
-    let binario1 = inputbinario1.value;
-    let binario2 = inputbinario2.value;
+
+    var binario1 = inputbinario1.value;
+    var binario2 = inputbinario2;
+
+    var resultado = binario1 + binario2; 
+
+    console.log(inputbinario2.value);
+    
 
 
 
     divsoma.innerHTML = "binario1: " + binario1 + "<br>" +
-                        "binario2: " + binario2 + "<br";
+                        "binario2: " + binario2 + "<br>" +
+                        "resultado: " + resultado + "<br" ;
+
+
 }
 
 function inverter(binario) {
