@@ -62,7 +62,7 @@ function soma() {
                         "binario2: " + binario2 + "<br>" +
                         "resultado: " + bit1 + bit2 + bit3 + bit4 + bit5 + "<br" ;
     
-
+console.log("qque raivaaaaaaaaaaaaaa");
 
 
 
