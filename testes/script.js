@@ -21,46 +21,18 @@ function soma() {
     var bitseparado = digits.map(Number)
     console.log(bitseparado);
 
-    var bit1 = 0;
-    var bit2 = 0;
-    var bit3 = 0;
-    var bit4 = 0;
-    var bit5 = 0;
+    for (var i = 0; i < bitseparado.length; ++i) {
+      var bit ="bit"+ i+" = " + bitseparado[i];
+      eval(bit);
+      console.log(bit);
+    }
+      
+    
 
-    for (i = 0; i < bitseparado.length; i++) {
-        bit1 = bitseparado[i];
-        bit2 = bitseparado[i-1];
-        bit3 = bitseparado[i-2];
-        bit4 = bitseparado[i-3];
-      }
-      for(i = 0; i < bitseparado.length; i++){
-        if(bit1 = 2){
-            bit1 = 0;
-            bit2 =+ 1;
-          }else
-          if(bit2 = 2){
-            bit2 = 0;
-            bit3 =+ 1;
-          }else
-          if(bit3 = 2){
-            bit3 = 0;
-            bit4 =+ 1;
-          }else
-          if(bit4 = 2){
-            bit4 = 0;
-            bit5 =+ 1;
-          }
-      }
-
-      console.log(bit1);
-      console.log(bit2);
-      console.log(bit3);
-      console.log(bit4);
-      console.log(bit5);
 
     divsoma.innerHTML = "binario1: " + binario1 + "<br>" +
                         "binario2: " + binario2 + "<br>" +
-                        "resultado: " + bit1 + bit2 + bit3 + bit4 + bit5 + "<br" ;
+                        "resultado: " +  "<br" ;
     
 console.log("qque raivaaaaaaaaaaaaaa");
 

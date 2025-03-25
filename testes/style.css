@@ -8,6 +8,7 @@ button{
     all:unset;
 }
 button{
+    margin-top: 15px;
     color: rgb(138, 138, 138);
     border: 1px;
     border-color: rgb(138, 138, 138);
@@ -17,6 +18,7 @@ button{
 }
 
 button:hover{
+    margin-top: 15px;
     transition: 250ms;
     color: rgb(0, 0, 0);
     border-radius: 4px;
@@ -36,6 +38,8 @@ input {
   }
 
 input{
+    margin-top: 15px;
+    margin-top: 15px;
     color: rgb(138, 138, 138);
     width: auto;
     height: 25px;
@@ -46,6 +50,7 @@ input{
     border-style: solid;
 }
 input:hover{
+    margin-top: 15px;
     transition: 500ms;
     color: rgb(114, 114, 114);
     width: auto;
@@ -57,6 +62,7 @@ input:hover{
     border-style: solid;
 }
 input:focus{
+    margin-top: 15px;
     transition: 250ms;
     box-shadow: 1px 1px 3px rgb(117, 117, 117);
     color: black;
