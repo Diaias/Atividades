@@ -15,24 +15,28 @@ function soma() {
     var binario2 = parseInt(inputbinario2.value);
 
     var resultado = binario1 + binario2;
-
     var digits = resultado.toString().split('');
     console.log(digits);
     var bitseparado = digits.map(Number)
     console.log(bitseparado);
 
-    for (var i = 0; i < bitseparado.length; ++i) {
-      var bit ="bit"+ i+" = " + bitseparado[i];
-      eval(bit);
-      console.log(bit);
-    }
-      
-    
+    for (let i = 0; i < bitseparado.length; ++i) {
+        window['bit'+i] = bitseparado[i];
+        if (window['bit'+i] != 1 || window['bit'+i] != 0 || window['bit'+i] != 2) {
+            window['bit'+(i+1)] = 0;
+        }
+        if (window['bit'+i] != 1 || window['bit'+i] != 0) {
+            window['bit'+(i+1)] += 1;
+            window['bit'+i] -= 1;
+        }
 
+        console.log(window);
+    }
+    
 
     divsoma.innerHTML = "binario1: " + binario1 + "<br>" +
                         "binario2: " + binario2 + "<br>" +
-                        "resultado: " +  "<br" ;
+                        "resultado: " + bit0 + "<br" ;
     
 console.log("qque raivaaaaaaaaaaaaaa");
 
