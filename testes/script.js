@@ -22,23 +22,33 @@ function soma() {
 
     for (let i = 0; i < bitseparado.length; ++i) {
         window['bit'+i] = bitseparado[i];
-        if (window['bit'+i] != 1 || window['bit'+i] != 0 || window['bit'+i] != 2) {
+        console.log(window['bit'+i]);
+        if (window['bit'+(i+1)] != 1 || window['bit'+(i+1)] != 0 || window['bit'+(i+1)] != 2) {
             window['bit'+(i+1)] = 0;
+            console.log(window['bit'+(i+1)]);
         }
-        if (window['bit'+i] != 1 || window['bit'+i] != 0) {
-            window['bit'+(i+1)] += 1;
-            window['bit'+i] -= 1;
-        }
-
         console.log(window);
+    }
+    let i = 0;
+    let a = 0;
+    let b = 1;
+    while(a != b) {
+        console.log(window['bit'+i]);
+        if (window['bit'+i] > 1) {
+            window['bit'+(i+1)] = window['bit'+(i+1)] + 1;
+            console.log("bit+1: "+window['bit'+(i+1)]);
+            window['bit'+i] -= 2;
+            console.log("bit+0: "+window['bit'+i]);
+        }
+        console.log(window);
+        b -= 1;
+        i++;
     }
     
 
     divsoma.innerHTML = "binario1: " + binario1 + "<br>" +
                         "binario2: " + binario2 + "<br>" +
-                        "resultado: " + bit0 + "<br" ;
-    
-console.log("qque raivaaaaaaaaaaaaaa");
+                        "resultado: " + "<br" ;
 
 
 
