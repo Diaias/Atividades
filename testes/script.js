@@ -13,42 +13,30 @@ function soma() {
 
     var binario1 = parseInt(inputbinario1.value);
     var binario2 = parseInt(inputbinario2.value);
-
     var resultado = binario1 + binario2;
-    var digits = resultado.toString().split('');
-    console.log(digits);
-    var bitseparado = digits.map(Number)
-    console.log(bitseparado);
+
+    var digitos = resultado.toString().split('').reverse();
+
+    var bitseparado = digitos.map(Number);
+    var valorsoma = "";
 
     for (let i = 0; i < bitseparado.length; ++i) {
         window['bit'+i] = bitseparado[i];
-        console.log(window['bit'+i]);
         if (window['bit'+(i+1)] != 1 || window['bit'+(i+1)] != 0 || window['bit'+(i+1)] != 2) {
             window['bit'+(i+1)] = 0;
-            console.log(window['bit'+(i+1)]);
         }
-        console.log(window);
     }
-    let i = 0;
-    let a = 0;
-    let b = 1;
-    while(a != b) {
-        console.log(window['bit'+i]);
+    for (let i = 0; i < bitseparado.length + 1; ++i) {
         if (window['bit'+i] > 1) {
             window['bit'+(i+1)] = window['bit'+(i+1)] + 1;
-            console.log("bit+1: "+window['bit'+(i+1)]);
             window['bit'+i] -= 2;
-            console.log("bit+0: "+window['bit'+i]);
         }
-        console.log(window);
-        b -= 1;
-        i++;
+        valorsoma +=  window['bit'+i].toString();
     }
-    
 
     divsoma.innerHTML = "binario1: " + binario1 + "<br>" +
                         "binario2: " + binario2 + "<br>" +
-                        "resultado: " + "<br" ;
+                        "resultado: " + inverter(valorsoma) + "<br>" ;
 
 
 
