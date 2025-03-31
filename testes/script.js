@@ -38,9 +38,6 @@ function soma() {
                         "binario2: " + binario2 + "<br>" +
                         "resultado: " + inverter(valorsoma) + "<br>" ;
 
-
-
-
 }
 
 function inverter(binario) {
