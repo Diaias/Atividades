@@ -6,8 +6,34 @@ const divsoma = document.getElementById("resultadosoma");
 const botao = document.getElementById("botao");
 const botao2 = document.getElementById("botao2");
 
-botao.addEventListener("click", conversao)
-botao2.addEventListener("click", soma)
+botao.addEventListener("click", conversao);
+botao2.addEventListener("click", soma);
+
+inputbinario1.addEventListener("keydown", function(evt){
+    var regEx = /^(0|1)$/;
+    
+    // Account for two ways to press 0 and 1 on full-size keyboards
+    var key1 = String.fromCharCode(evt.keyCode);
+    var key2 = String.fromCharCode(evt.keyCode-48); // Adjustment for the keydown event
+  
+    // Test key against regular expression
+    if(!regEx.test(key1) && !regEx.test(key2)){
+      evt.preventDefault();
+    }
+  });
+  
+inputbinario2.addEventListener("keydown", function(evt){
+    var regEx = /^(0|1)$/;
+    
+    // Account for two ways to press 0 and 1 on full-size keyboards
+    var key1 = String.fromCharCode(evt.keyCode);
+    var key2 = String.fromCharCode(evt.keyCode-48); // Adjustment for the keydown event
+  
+    // Test key against regular expression
+    if(!regEx.test(key1) && !regEx.test(key2)){
+      evt.preventDefault();
+    }
+  });
 
 function soma() {
 
@@ -55,10 +81,11 @@ function inverter(binario) {
 function conversao() {
     let decimal = inputdecimal.value;
     let i = 0;
+    let a = 0;
     let binario = "";
-    console.log(decimal);
+    let fracionario = "";
     let depoisvirgula = decimal.slice(decimal.indexOf('.')).slice(1);
-    console.log(depoisvirgula);
+    let vezes = depoisvirgula.length;
 
 
     while(decimal!=0){
@@ -79,9 +106,24 @@ function conversao() {
         decimal = Math.floor(decimal / 2);
     }
     if(depoisvirgula != 0){
-
+        conta = depoisvirgula/(10 ** vezes);
+        conta1 = conta;
+        while(a < 6){
+            conta1 = conta1*2;
+            if(conta1 >= 1){
+                conta1 = Math.floor((conta1 - 1)*(10 ** vezes+1));
+                conta1 = conta1/(10 ** vezes)
+                fracionario += "1"
+            }else{
+                fracionario += "0"
+            }
+            a++;
+        }
+        div.innerHTML = "binario: " +inverter(binario)+ "," + fracionario + "<BR>" +
+                        "bits: " + i;
+    }else{
+        div.innerHTML = "binario: " +inverter(binario) + "<BR>" +
+                        "bits: " + i;
     }
-    div.innerHTML = "binario: " +inverter(binario) + "<BR>" +
-                    "bits: " + i;
 }
 
