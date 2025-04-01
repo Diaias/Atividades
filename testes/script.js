@@ -11,12 +11,8 @@ botao2.addEventListener("click", soma);
 
 inputbinario1.addEventListener("keydown", function(evt){
     var regEx = /^(0|1)$/;
-    
-    // Account for two ways to press 0 and 1 on full-size keyboards
     var key1 = String.fromCharCode(evt.keyCode);
-    var key2 = String.fromCharCode(evt.keyCode-48); // Adjustment for the keydown event
-  
-    // Test key against regular expression
+    var key2 = String.fromCharCode(evt.keyCode-48);
     if(!regEx.test(key1) && !regEx.test(key2)){
       evt.preventDefault();
     }
@@ -24,12 +20,8 @@ inputbinario1.addEventListener("keydown", function(evt){
   
 inputbinario2.addEventListener("keydown", function(evt){
     var regEx = /^(0|1)$/;
-    
-    // Account for two ways to press 0 and 1 on full-size keyboards
     var key1 = String.fromCharCode(evt.keyCode);
-    var key2 = String.fromCharCode(evt.keyCode-48); // Adjustment for the keydown event
-  
-    // Test key against regular expression
+    var key2 = String.fromCharCode(evt.keyCode-48);
     if(!regEx.test(key1) && !regEx.test(key2)){
       evt.preventDefault();
     }
