@@ -32,11 +32,15 @@ function soma() {
             window['bit'+i] -= 2;
         }
         valorsoma +=  window['bit'+i].toString();
+        valorsomatotal = inverter(valorsoma);
+    }
+    if(valorsomatotal.charAt(0) == "0"){
+        valorsomatotal = valorsomatotal.slice(1);
     }
 
     divsoma.innerHTML = "binario1: " + binario1 + "<br>" +
                         "binario2: " + binario2 + "<br>" +
-                        "resultado: " + inverter(valorsoma) + "<br>" ;
+                        "resultado: " + valorsomatotal + "<br>" ;
 
 }
 
@@ -52,6 +56,10 @@ function conversao() {
     let decimal = inputdecimal.value;
     let i = 0;
     let binario = "";
+    console.log(decimal);
+    let depoisvirgula = decimal.slice(decimal.indexOf('.')).slice(1);
+    console.log(depoisvirgula);
+
 
     while(decimal!=0){
         teste1 = decimal / 2;
@@ -69,9 +77,11 @@ function conversao() {
         };
         i++;
         decimal = Math.floor(decimal / 2);
-
-        div.innerHTML = "binario: " +inverter(binario) + "<BR>" +
-                    "bits: " + i;
     }
+    if(depoisvirgula != 0){
+
+    }
+    div.innerHTML = "binario: " +inverter(binario) + "<BR>" +
+                    "bits: " + i;
 }
 
