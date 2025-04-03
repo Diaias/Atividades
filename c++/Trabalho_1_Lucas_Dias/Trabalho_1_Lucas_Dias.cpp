@@ -13,17 +13,22 @@ int main()
     cout << "Informe a forma de pagamento:\n";
     cin >> formap;
 
-    if(formap < 1 || formap > 3){
-        cout << "Forma de pagamento invalida";
-        exit(0);
+    while(formap < 1 || formap > 4){
+        cout << "Forma de pagamento invalida.\n\n";
+        cout << "Informe uma forma de pagamento valida:\n";
+        cin >> formap;
     }
+    if(formap == 4){
+            exit(0);
+        }
 
     cout << "Informe o valor da compra:\n" << fixed << setprecision(2);
     cin >> valorc;
 
-    if(valorc < 1.00){
-        cout << "Valor da compra nao pode ser menor que um.";
-        exit(0);
+    while(valorc < 1){
+        cout << "Valor da compra nao pode ser menor que um.\n\n";
+        cout << "Informe um valor da compra valido:\n" << fixed << setprecision(2);
+        cin >> valorc;
     }
 
     if(valorc <= 100){
