@@ -16,7 +16,7 @@ int main()
 
         for(j=0; j<i; j++){
             if(vet[i] == vet[j]){
-                cout<<"\n[ja teve igual]:";
+                cout<<"\nja teve igual";
                 i--;
             }
         }
