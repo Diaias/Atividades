@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo de Cartas - CPW</title>
+  <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Jogo de Cartas - Criação de Páginas Web</h1>
+    <p>Cadastre cartas para dois jogadores. Cada carta tem um nome e um valor de dano. Depois, selecione uma carta de
+      cada jogador para iniciar a batalha!</p>
+  </header>
+
+  <div id="cartas">
+    <input type="text" id="txtNomeCarta" placeholder="Nome da Carta">
+    <input type="number" id="numDanoCarta" placeholder="Dano da Carta">
+    <select id="selJogador">
+      <option value="jog1">Jogador 1</option>
+      <option value="jog2">Jogador 2</option>
+    </select>
+    <button id="btnAddCarta">Adicionar Carta</button>
+  </div>
+
+  <div id="conteudo">
+    <div id="center">
+      <div class="listagem-cartas">
+        <h3>Cartas do Jogador 1</h3>
+        <ul id="listaJogador1">
+        </ul>
+      </div>
+      <div class="listagem-cartas">
+        <h3>Cartas do Jogador 2</h3>
+        <ul id="listaJogador2">
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="secao-batalha">
+    <h3>Selecionar Cartas para Batalha</h3>
+    <select id="cartaJ1"></select>
+    <select id="cartaJ2"></select>
+    <button id="btnBatalha">Batalhar</button>
+    <p id="resultadoBatalha"></p>
+  </div>
+
+  <footer>
+    <p>Instituto Federal Sul-rio-grandense - Campus Passo Fundo | Disciplina: Criação de Páginas Web</p>
+  </footer>
+  <script src="../js/script.js"></script>
+</body>
+
+</html>

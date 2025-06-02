@@ -1,0 +1,86 @@
+body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #1f2937;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #cartas {
+      background-color: #e2e8f0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #cartas input,
+    #cartas select,
+    #cartas button {
+      margin: 5px;
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    #conteudo {
+      width: 100%;
+      float: left;
+      justify-content: space-around;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background-color: #fff;
+    }
+    #center{
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .listagem-cartas {
+      width: 40%;
+      float: left;
+      margin: 0 5%;
+    }
+
+    .listagem-cartas h3 {
+      text-align: center;
+    }
+
+    .listagem-cartas ul {
+      background-color: #edf2f7;
+      padding: 5%;
+      min-height: 100px;
+    }
+    .listagem-cartas li{
+      list-style-type: none;
+      font-size: 14pt;
+    }
+
+    .secao-batalha {
+      width: 100%;
+      float: left;
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background-color: #e2e8f0;
+    }
+
+    .secao-batalha select,
+    .secao-batalha button {
+      margin: 10px;
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    footer {
+      width: 100%;
+      float: left;
+      background-color: #2d3748;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
